@@ -7,22 +7,19 @@ Have them ready to be executed instantly — right on your terminal prompt, no c
 ## Demonstration/Usage
 **Search and run:**
 Hit `Ctrl+F` to open the search. Find your command and press `Enter` — it'll be placed on your terminal prompt, ready to run.
+<img width="1920" height="1080" alt="search_in_recall" src="https://github.com/user-attachments/assets/774eb1a8-e95c-4d14-b234-9f71d7d507b8" />
 
+#
 **Add a command:**
 ```bash
 recall -s
 ```
-You'll be prompted for a title and the command:
-```
-title: <your title>
-command: <your command>
-```
+<img width="1117" height="617" alt="add_in_recall" src="https://github.com/user-attachments/assets/4fef23f2-1dcc-41b6-8f65-550872d40deb" />
 
-Hit enter, and it's stored instantly.
-
+#
 **Delete a command:**
-
 Hit `Ctrl+F` to open the search, find the command you want to remove, and press `Ctrl+D`.
+<img width="1920" height="1080" alt="delete_in_recall" src="https://github.com/user-attachments/assets/1e16d462-7eb4-4d50-a44d-9281741f2dc2" />
 
 
 ## Installation guide
