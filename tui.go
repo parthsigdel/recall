@@ -93,7 +93,11 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if len(v) > 0 {
 				items := filterList(m, v)
 				m.list.SetItems(items)
+				if len(items) > 0 {
+					m.list.Select(0)
+				}
 			}
+
 			return m, cmd
 
 		case "ctrl+j":
