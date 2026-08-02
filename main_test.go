@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/CoderParth/recall/shell"
+	"github.com/parthsigdel/recall/shell"
 )
 
 const testRecallFileDir = "test_recall_dir"

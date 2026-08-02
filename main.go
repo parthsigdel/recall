@@ -17,7 +17,7 @@ import (
 	"strings"
 
 	tea "charm.land/bubbletea/v2"
-	"github.com/CoderParth/recall/shell"
+	"github.com/parthsigdel/recall/shell"
 )
 
 const recallDirName = "recall"

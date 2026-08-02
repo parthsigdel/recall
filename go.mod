@@ -1,4 +1,4 @@
-module github.com/CoderParth/recall
+module github.com/parthsigdel/recall
 
 go 1.26.3
 
