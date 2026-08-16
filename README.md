@@ -35,6 +35,7 @@ curl -fsSL https://raw.githubusercontent.com/parthsigdel/recall/main/install.sh 
 ```
 go install github.com/parthsigdel/recall@latest
 ```
+Requires Go 1.26.3 or higher.
 
 If you installed with Go, please make sure your Go bin is in your PATH. If not already added, add this to your shell config:
 
