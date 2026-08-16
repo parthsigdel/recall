@@ -27,13 +27,13 @@ Hit `Ctrl+F` to open the search, find the command you want to remove, and press 
 ### macOS / Linux
 
 ```
-curl -fsSL https://raw.githubusercontent.com/parthsigdel/recall/main/install.sh | sh
+curl -fsSL https://sh.parthsigdel.com/recall | sh
 ```
 
 ### Windows (Powershell)
 
 ```
-irm https://raw.githubusercontent.com/parthsigdel/recall/main/install.ps1 | iex
+irm https://sh.parthsigdel.com/recall.ps1 | iex
 ```
 
 ## Shell integration — IMPORTANT
