@@ -77,5 +77,10 @@ source ~/.zshrc
 source ~/.config/fish/config.fish
 ```
 
+`powershell`:
+```
+. $PROFILE
+```
+
 ## NOTE
 If you have already set up a keybinding involving CTRL+F, please skip the shell integration process mentioned above. Instead, just use "recall" to start it. 
