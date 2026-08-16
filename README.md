@@ -54,6 +54,12 @@ eval "$(recall -init zsh)"
 recall -init fish | source
 ```
 
+`powershell` / `pwsh` (run `$PROFILE` to find your profile path):
+```
+Invoke-Expression (recall -init powershell)
+```
+
+
 Then reload your config file:
 
 `bash`:

@@ -36,6 +36,18 @@ end
 bind \cf _recall
 `
 
+const initPowershell = `
+Set-PSReadLineKeyHandler -Chord 'Ctrl+f' -ScriptBlock {
+    param($key, $arg)
+
+    $cmd = recall
+    if ([string]::IsNullOrEmpty($cmd)) { return }
+
+    [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert($cmd)
+}
+`
+
 func Run(shell string) (string, error) {
 	switch shell {
 	case "bash":
@@ -44,6 +56,8 @@ func Run(shell string) (string, error) {
 		return initZsh, nil
 	case "fish":
 		return initFish, nil
+	case "powershell":
+		return initPowershell, nil
 	default:
 		return "", fmt.Errorf("Unsupported shell: %s \n", shell)
 	}
