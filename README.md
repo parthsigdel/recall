@@ -23,11 +23,20 @@ Hit `Ctrl+F` to open the search, find the command you want to remove, and press 
 
 
 ## Installation guide
+
+### macOS / Linux
+
+```
+curl -fsSL https://raw.githubusercontent.com/parthsigdel/recall/main/install.sh | sh
+```
+
+### Windows
+
 ```
 go install github.com/parthsigdel/recall@latest
 ```
 
-Then make sure your Go bin is on your PATH. If not already added, please add this to your shell config:
+If you installed with Go, please make sure your Go bin is in your PATH. If not already added, add this to your shell config:
 
 `bash` / `zsh`:
 ```
