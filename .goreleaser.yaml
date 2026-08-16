@@ -12,14 +12,18 @@ builds:
     goos:
       - darwin
       - linux
+      - windows
     goarch:
       - amd64
       - arm64
 archives:
   - id: recall
-    formats: [tar.gz]
     name_template: >-
       {{ .ProjectName }}_{{ .Os }}_{{ .Arch }}
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    formats: [tar.gz]
 checksum:
   name_template: "checksums.txt"
 release:
