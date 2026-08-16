@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"io"
 	"os"
 
 	"charm.land/bubbles/v2/list"
@@ -117,6 +118,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	if len(v) > 0 {
 		items := filterList(m, v)
 		m.list.SetItems(items)
+	} else {
+		m.list.SetItems(initList(*m.buf))
 	}
 
 	return m, cmd
@@ -145,7 +148,7 @@ func (m model) View() tea.View {
 }
 
 func (m model) listView() string {
-	if len(m.textInput.Value()) > 0 {
+	if len(m.list.Items()) > 0 {
 		return m.list.View()
 	}
 	// return empty space of same height to keep "help" section in a fixed position.
@@ -169,6 +172,22 @@ func filterList(m model, v string) []list.Item {
 	reader := bufio.NewReader(bytes.NewReader(*(m.buf)))
 	match := searchInBuffer(reader, v)
 	for _, line := range match {
+		items = append(items, item(line))
+	}
+	return items
+}
+
+func initList(buf []byte) []list.Item {
+	items := []list.Item{}
+	reader := bufio.NewReader(bytes.NewReader(buf))
+	for {
+		line, err := reader.ReadString('\n')
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			panic(err)
+		}
 		items = append(items, item(line))
 	}
 	return items
