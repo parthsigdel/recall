@@ -30,7 +30,7 @@ Hit `Ctrl+F` to open the search, find the command you want to remove, and press 
 curl -fsSL https://raw.githubusercontent.com/parthsigdel/recall/main/install.sh | sh
 ```
 
-### Windows
+### Windows (Powershell)
 
 ```
 irm https://raw.githubusercontent.com/parthsigdel/recall/main/install.ps1 | iex
@@ -76,3 +76,6 @@ source ~/.zshrc
 ```
 source ~/.config/fish/config.fish
 ```
+
+## NOTE
+If you have already set up a keybinding involving CTRL+F, please skip the shell integration process mentioned above. Instead, just use "recall" to start it. 
