@@ -54,11 +54,7 @@ eval "$(recall -init zsh)"
 recall -init fish | source
 ```
 
-`powershell` / `pwsh` (run `$PROFILE` to find your profile path):
-```
-Invoke-Expression (recall -init powershell)
-```
-
+> **Note:** Shell integration for PowerShell isn't available yet. Use `recall` directly — keybindings won't work without shell integration.
 
 Then reload your config file:
 
@@ -77,10 +73,4 @@ source ~/.zshrc
 source ~/.config/fish/config.fish
 ```
 
-`powershell`:
-```
-. $PROFILE
-```
-
-## NOTE
-If you have already set up a keybinding involving CTRL+F, please skip the shell integration process mentioned above. Instead, just use "recall" to start it. 
+> **Note:** If you have already set up a keybinding involving CTRL+F, please skip the shell integration process mentioned above. Instead, just use "recall" to start it. Or please consider modifying your current CTRL+F keybinding to make a space for recall.  
