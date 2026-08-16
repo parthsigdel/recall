@@ -1,0 +1,45 @@
+version: 2
+
+project_name: recall
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: recall
+    main: .
+    binary: recall
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: recall
+    formats: [tar.gz]
+    name_template: >-
+      {{ .ProjectName }}_{{ .Os }}_{{ .Arch }}
+
+checksum:
+  name_template: "checksums.txt"
+
+brews:
+  - name: recall
+    repository:
+      owner: parthsigdel
+      name: homebrew-recall
+      branch: main
+    directory: Formula
+    homepage: "https://github.com/parthsigdel/recall"
+    description: "Store the commands you keep forgetting but know you'll need again."
+    install: |
+      bin.install "recall"
+
+release:
+  github:
+    owner: parthsigdel
+    name: recall
