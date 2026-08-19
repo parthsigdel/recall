@@ -4,6 +4,20 @@ Store the commands you keep forgetting but know you'll need again.
 Remove the inconveniency of searching the same commands online (or your shell history), copying them, pasting them , and refining them again according to your needs. 
 Have them ready to be executed instantly — right on your terminal prompt, no copy-pasting.
 
+## Why recall?
+
+Aliases work fine — until you've got 30+ of them and can't remember the exact name you gave each one.
+
+- **Forgot the name?** With aliases, you're stuck running `alias | grep "search-term"` and reading raw, non-interactive output.
+- **No edit step.** Once you type an alias, it fires immediately — if the IP changed, the port's different, or you want to tweak a flag, you're stuck hitting Ctrl+C and starting over.
+
+recall adds two things on top of that idea:
+
+- **Interactive fuzzy search** — hit `Ctrl+F`, type a few letters, arrow through matches. No need to remember the exact label.
+- **Edit before you run** — selecting a command drops it directly into your prompt instead of running it, so you can tweak the IP, port, or a flag before hitting enter.
+
+That matters once you've got a lot of similar, reusable commands — multiple SSH targets, curl calls with different flags, etc. — where the command is 90% the same each time but not identical.
+
 ## Demonstration/Usage
 **Search and run:**
 Hit `Ctrl+F` to open the search. Find your command and press `Enter` — it'll be placed on your terminal prompt, ready to run.
@@ -74,17 +88,3 @@ source ~/.config/fish/config.fish
 ```
 
 > **Note:** If you have already set up a keybinding involving CTRL+F, please skip the shell integration process mentioned above. Instead, just use "recall" to start it. Or please consider modifying your current CTRL+F keybinding to make a space for recall.  
-
-## Why recall?
-
-Aliases work fine — until you've got 30+ of them and can't remember the exact name you gave each one.
-
-- **Forgot the name?** With aliases, you're stuck running `alias | grep "search-term"` and reading raw, non-interactive output.
-- **No edit step.** Once you type an alias, it fires immediately — if the IP changed, the port's different, or you want to tweak a flag, you're stuck hitting Ctrl+C and starting over.
-
-recall adds two things on top of that idea:
-
-- **Interactive fuzzy search** — hit `Ctrl+F`, type a few letters, arrow through matches. No need to remember the exact label.
-- **Edit before you run** — selecting a command drops it directly into your prompt instead of running it, so you can tweak the IP, port, or a flag before hitting enter.
-
-That matters once you've got a lot of similar, reusable commands — multiple SSH targets, curl calls with different flags, etc. — where the command is 90% the same each time but not identical.
